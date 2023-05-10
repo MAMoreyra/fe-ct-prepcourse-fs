@@ -50,10 +50,7 @@ function dePalabrasAFrase(palabras) {
    // con un espacio entre cada palabra.
    // Ejemplo: ['H.prototypeello', 'world!'] -> 'Hello world!'.
    // Tu código:
-   let one = "Hello"
-   let two ="World!"
-   var palabras = ("Hello" + " " + "World")
-   return palabras
+   return ("Hello " + "World" + "!")
 }
 
 function arrayContiene(array, elemento) {

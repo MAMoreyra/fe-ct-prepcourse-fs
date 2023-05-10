@@ -18,7 +18,7 @@ function elevarAlCubo(num) {
 function elevar(num, exponent) {
    // Retorna el valor de "num" elevado al exponente "exponent".
    // Tu código:
-   return Math.max(num,exponent)
+   return Math.pow(num,exponent)
 }
 
 function redondearNumero(num) {
@@ -30,13 +30,13 @@ function redondearNumero(num) {
 function redondearHaciaArriba(num) {
    // Redondea "num" hacia arriba y retórnalo.
    // Tu código:
-   return Math.Fixed(num)
+   return Math.ceil(num)
 }
 
 function numeroRandom() {
    // Genera un número al azar entre 0 y 1 y retórnalo.
    // Tu código:
-   return Math.random(0,1)
+   return Math.random();
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
