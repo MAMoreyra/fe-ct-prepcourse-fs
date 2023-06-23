@@ -9,24 +9,24 @@ function devolverPrimerElemento(array) {
 function devolverUltimoElemento(array) {
    // Retornar el último elemento del arreglo recibido por parámetro.
    // Tu código:
-   return(array[array.length - 1])
+   return(array[array.length - 1]);
 }
 
 function obtenerLargoDelArray(array) {
    // Retornar la longitud del arreglo recibido por parámetro.
    // Tu código:
-   return (array.length)
+   return (array.length);
 }
 
 function incrementarPorUno(array) {
    // El arreglo recibido por parámetro contiene números.
    // Retornar un arreglo con los elementos incrementados en +1.
    // Tu código:
-   var arrayIncrementado = [];
+   
    for (var i = 0; i < array.length; i++) {
-      arrayIncrementado.push (array[i]+1);
+      array[i] = array[i]+1;
    }
-   return arrayIncrementado;
+   return array;
 }
 
 function agregarItemAlFinalDelArray(array, elemento) {
@@ -91,14 +91,17 @@ function numeroMasGrande(arrayOfNums) {
    // El parámetro "arrayOfNums" es un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
    // Tu código:
-   var numeroMasGrande = 0;
-   for (var i = 0; i < arrayOfNums.length; i ++){
-      if (arrayOfNums[i] > numeroMasGrande){
-         numeroMasGrande = arrayOfNums[i];
+   var mayor = arrayOfNums[0];
+
+   arrayOfNums.forEach(function(numero) {
+      if (numero > mayor) {
+      mayor = numero;
       }
+   })
+
+   return mayor;
    }
-   return numeroMasGrande;
-}
+
 
 function multiplicarArgumentos() {
    // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto.
@@ -135,7 +138,7 @@ function diaDeLaSemana(numeroDeDia) {
    // Tu código:
    if (numeroDeDia === 1 || numeroDeDia === 7){
       return "Es fin de semana";
-   } else if (numeroDeDia > 1 && numeroDeDia < 7){
+   } else {
       return "Es dia laboral";
    }
 }
@@ -144,13 +147,14 @@ function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
-   let n = num.toString()
-   if(n[0] === '9'){
-   return true}
-   else{
-   return false}
-}
+   var string = num.toString();
 
+   if(string [0] === '9'){
+   return true;
+   } else {
+   return false;
+   }
+}
 function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
@@ -187,7 +191,7 @@ function tablaDelSeis() {
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
    const tablaDelSeis = [];
-      for (i=0;i<=10;i++){
+      for (i=0; i<=10;i++){
          tablaDelSeis.push(6 * [i]);
       }
       return tablaDelSeis;
@@ -197,7 +201,7 @@ function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
-   let mayorACien = array.filter(esM => esM > 100) ;
+   var mayorACien = array.filter(esM => esM > 100) ;
    return mayorACien
 } 
 
