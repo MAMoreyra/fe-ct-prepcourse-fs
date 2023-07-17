@@ -43,27 +43,27 @@ function obtenerSaludo(nombre) {
 function obtenerAreaRectangulo(alto, ancho) {
    // Retornar el área de un rectángulo teniendo su altura y ancho.
    // Tu código:
-      return alto * ancho
+      return alto * ancho;
 }
 
 function retornarPerimetro(lado) {
    // La función recibe como argumento la medida de un lado de un cuadrado.
    // Debes retornar su perímetro.
    // Tu código:
-   return lado * 4
+   return lado * 4;
 }
 
 function areaDelTriangulo(base, altura) {
    // Calcula el área de un triángulo y retorna el resultado.
    // Tu código:
-   return base * altura / 2
+   return (base * altura) / 2;
 }
 
 function deEuroAdolar(euro) {
    // Supongamos que 1 euro equivale a 1.20 dólares.
    // Debes calcular el valor recibido como argumento pasándolo a dolares.
    // Tu código:
-   return euro * 1.2
+   return euro * 1.2;
 }
 
 function esVocal(letra) {
@@ -71,12 +71,13 @@ function esVocal(letra) {
    // Si el usuario ingresa un string de más de un caracter debes retornar el mensaje: "Dato incorrecto".
    // Si no es vocal, tambien debe retornar "Dato incorrecto".
    // Tu código:
+   if (letra.length > 1){
+      return("Dato incorrecto")
+   }
+   
    if (letra === 'a' || letra === 'e' || letra === 'i' || letra === 'o' || letra === 'u'){
    return ("Es vocal")
-   }else if (letra.length !== 1){
-   return("Dato incorrecto")
-   }
-   else if(letra !== 'a' || letra !== 'e' || letra !== 'i' || letra !== 'o' || letra !== 'u'){
+   } else {
    return("Dato incorrecto")
    }
 } 
