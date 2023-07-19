@@ -24,7 +24,7 @@ function incrementarPorUno(array) {
    // Tu código:
    
    for (var i = 0; i < array.length; i++) {
-      array[i] = array[i]+1;
+      array[i] = array[i] +  1;
    }
    return array;
 }
@@ -51,7 +51,10 @@ function dePalabrasAFrase(palabras) {
    // con un espacio entre cada palabra.
    // Ejemplo: ['H.prototypeello', 'world!'] -> 'Hello world!'.
    // Tu código:
-   return palabras.join(' ');
+   var frase = palabras.reduce(function (acc, palabra) {
+      return acc + " " + palabra;
+   })
+   return frase;
 }
 
 function arrayContiene(array, elemento) {
@@ -69,10 +72,9 @@ function agregarNumeros(arrayOfNums) {
    // El parámetro "arrayOfNums" debe ser un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
    // Tu código:
-   var suma = 0
-   for(i = 0;i < arrayOfNums.length; i++){
-      suma = suma + arrayOfNums[i];
-   }
+   var suma = arrayOfNums.reduce(function (acc, numero){
+      return acc + numero;
+   })
    return suma;
 }
 
@@ -80,11 +82,11 @@ function promedioResultadosTest(resultadosTest) {
    // El parámetro "resultadosTest" es un arreglo de números.
    // Itera (en un bucle) los elementos del arreglo y devuelve el promedio de las notas.
    // Tu código:
-   var promedioResultadosTest = 0;
+   var suma = 0;
    for (var i= 0; i< resultadosTest.length; i++){
-      promedioResultadosTest += resultadosTest[i];
-   }
-   return promedioResultadosTest / resultadosTest.length;
+      suma = suma + resultadosTest[i];
+   }   
+   return suma / resultadosTest.length;
 }
 
 function numeroMasGrande(arrayOfNums) {
@@ -100,7 +102,7 @@ function numeroMasGrande(arrayOfNums) {
    })
 
    return mayor;
-   }
+   }   
 
 
 function multiplicarArgumentos() {
@@ -108,27 +110,28 @@ function multiplicarArgumentos() {
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
-   if(arguments.length < 1){
-      return 0;  
+   var producto = 1;
+   if (arguments.length > 0) {
+      for (var i = 0; i < arguments.length; i++) {
+         producto = producto * arguments[i];
+      }
+      return producto;
+   } else {
+   return 0
    }
-   var total = 1;
-      for(var i = 0; i < arguments.length; i++) {
-         total = total * arguments[i];
-      }  
-         return total;
 }
       
 
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
-   var contador = 0
-   for (var i = 0; i < array.length; i++){
-      if (array[i]> 18){
-         contador += 1;
+   var total = 0
+   array.forEach(function(numero) {
+      if (numero > 18){
+	total ++;
       }
-   }
-   return contador; 
+   })
+   return total;
 }
 
 function diaDeLaSemana(numeroDeDia) {
@@ -155,16 +158,17 @@ function empiezaConNueve(num) {
    return false;
    }
 }
-function todosIguales(array) {
+function todosIguales(array) { // [2, 2, 2, 2, 2]
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
-   for(var i = 0; i < array.length - 1 ; i++){
-      if(array[i] !== array[i+1]){
+   var primerValor = array[0];
+   for(var i = 1; i < array.length; i++){
+      if(array[i] !== primerValor) {
          return false;
       }
-   
-   }
+
+      }
    return true;
 }
 
@@ -173,37 +177,42 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
-   var nuevoArray = [];
-   for (var i = 0 ; i < array.length ; i++) {
-      if (array[i] === "Enero" || array[i] === "Marzo" || array[i] === "Noviembre" ) {
-      nuevoArray.push(array[i]);
+   var meses = [];
+   array.forEach(function(mes) {
+      if (mes === "Enero" || mes === "Marzo" || mes === "Noviembre" ) {
+      meses.push(mes);
       }
-   }
-   if(nuevoArray.length === 3){
-      return nuevoArray
+   })
+   if (meses.length === 3) {
+      return meses;
    }else{
       return "No se encontraron los meses pedidos";
    }
-}
+}    
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
-   const tablaDelSeis = [];
-      for (i=0; i<=10;i++){
-         tablaDelSeis.push(6 * [i]);
+   var tabla = [];
+      for (i = 0; i< 11; i ++) {
+         tabla.push(i * 6);
       }
-      return tablaDelSeis;
+      return tabla;
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
-   var mayorACien = array.filter(esM => esM > 100) ;
-   return mayorACien
-} 
+   var filtro = [];
+   array.forEach(function(numero){
+      if(numero > 100) {
+         filtro.push(numero);
+      }
+   })   
+   return filtro;
+}
 
 
 /* ----------------------------------------------------------------------------------
