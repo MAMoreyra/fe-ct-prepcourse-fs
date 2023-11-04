@@ -159,7 +159,7 @@ function operadoresLogicos(num1, num2, num3) {
    } else if (num1 < 0 || num2 < 0 || num3 < 0){
       return "Hay negativos"; 
    } else if(num3 > num1 && num3 > num2){
-      num3++;
+      ++num3;
       return num3;
    } else if (num1 === 0 && num2 === 0 && num3 === 0) {
       return "Error";
@@ -213,11 +213,11 @@ function doWhile(num) {
    // Retornar el valor final.
    // Utilizar el bucle Do-While.
    // Tu código:
-   var limite = 0;
+   var contador = 0;
    do{
       num = num + 5;
-      limite = limite + 1;
-   }while (limite < 8)
+      contador = contador + 1;
+   }while (contador < 8)
       return num;
 }
 
