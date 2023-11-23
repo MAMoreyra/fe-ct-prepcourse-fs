@@ -49,44 +49,34 @@ function dePalabrasAFrase(palabras) {
    // El argumento "palabras" es un arreglo de strings.
    // Retornar un string donde todas las palabras estén concatenadas
    // con un espacio entre cada palabra.
-   // Ejemplo: ['H.prototypeello', 'world!'] -> 'Hello world!'.
+   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'.
    // Tu código:
-   var frase = palabras.reduce(function (acc, palabra) {
-      return acc + " " + palabra;
-   })
-   return frase;
+   return palabras.join(" ");
 }
 
 function arrayContiene(array, elemento) {
    // Verifica si el elemento existe dentro del arreglo recibido.
    // Retornar true si está, o false si no está.
    // Tu código:
-   for (var i=0; i < array.length;i++)
-   if (array[i]===elemento){
-      return true;
-   }
-   return false;
+   return array.includes(elemento);
 }
 
 function agregarNumeros(arrayOfNums) {
    // El parámetro "arrayOfNums" debe ser un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
    // Tu código:
-   var suma = arrayOfNums.reduce(function (acc, numero){
-      return acc + numero;
+   return arrayOfNums.reduce(function (acum, element){
+      acum = acum + element;
+      return acum;
    })
-   return suma;
+
 }
 
 function promedioResultadosTest(resultadosTest) {
    // El parámetro "resultadosTest" es un arreglo de números.
    // Itera (en un bucle) los elementos del arreglo y devuelve el promedio de las notas.
    // Tu código:
-   var suma = 0;
-   for (var i= 0; i< resultadosTest.length; i++){
-      suma = suma + resultadosTest[i];
-   }   
-   return suma / resultadosTest.length;
+   return agregarNumeros(resultadosTest)/obtenerLargoDelArray(resultadosTest);
 }
 
 function numeroMasGrande(arrayOfNums) {
@@ -111,16 +101,16 @@ function multiplicarArgumentos() {
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
    var producto = 1;
-   if (arguments.length > 0) {
+   if (arguments.length > 0){
       for (var i = 0; i < arguments.length; i++) {
-         producto = producto * arguments[i];
+         producto = producto * arguments [i];
       }
-      return producto;
+      return producto; 
    } else {
-   return 0
+      return 0;
    }
 }
-      
+
 
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
